@@ -8,29 +8,28 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		String nota1= JOptionPane.showInputDialog(null,"Digite a primeira nota: ");
-		String nota2= JOptionPane.showInputDialog(null,"Digite a segunda nota: ");
-		String nota3= JOptionPane.showInputDialog(null,"Digite a terceira nota: ");
-		String nota4= JOptionPane.showInputDialog(null,"Digite a quarta nota: ");
-		int dia = 2;
+		double nota1 = Double.parseDouble(JOptionPane.showInputDialog("Digite a primeira nota: "));
+		double nota2 = Double.parseDouble(JOptionPane.showInputDialog("Digite a segunda nota: "));
+		double nota3 = Double.parseDouble(JOptionPane.showInputDialog("Digite a terceira nota: "));
+		double nota4 = Double.parseDouble(JOptionPane.showInputDialog("Digite a quarta nota: "));
 		
+		double media = (nota1+nota2+nota3+nota4) / 4;
 		
-		System.out.println("Condicao IF: "+CondicaoIf.verificaMediaAluno(Integer.parseInt(nota1),Integer.parseInt(nota2),Integer.parseInt(nota3),Integer.parseInt(nota4)));
-		System.out.println("Condicao IF Ternario: "+CondicaoIf.verificaMediaAlunoComOperadorTernario(Integer.parseInt(nota1),Integer.parseInt(nota2),Integer.parseInt(nota3),Integer.parseInt(nota4)));
-		
-		System.out.println("\nDia: "+SwitchCase.verificarDia(dia));
-		
-		int resposta = JOptionPane.showConfirmDialog(null, "Gostaria de ver sua nota? " );
-		
-		if (resposta == 0) {
-			System.out.println("clicou em sim");
+		if(media >= 7) {
+			JOptionPane.showMessageDialog(null, "Média: "+media+" - APROVADO");
 		}
-		else if (resposta == 1) {
-			System.out.println("Clicou em Nao");
+		else if(media >= 5) {
+			JOptionPane.showMessageDialog(null, "Média: "+media+" - RECUPERAÇÃO");
+		
 		}
+		
 		else {
-			System.out.println("Clicou em cancelar");
+			JOptionPane.showMessageDialog(null, "Média: "+media+" - REPROVADO");
 		}
+		
+		
+		
+		
 	
 
 		
